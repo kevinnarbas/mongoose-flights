@@ -3,7 +3,7 @@
 <h4>Tickets already booked:</h4>
 <ul>
     <% tickets.forEach(function (tic) { %>
-        <li><%= tic.seat %></li>
+        <li><%= tic.seat %> $<%= tic.price %><%= tic.flight %></li>
     <% }) %>
 </ul>
 

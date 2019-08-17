@@ -33,11 +33,9 @@
 <% } %>
 
 <h3>Available Tickets:</h3>
-<a href="/tickets/new">Add Ticket</a>
+<a href="/flights/<%= flight._id %>/tickets/new">Add Ticket</a>
 <ul>
-    <% tickets.forEach(function(tic) { %>
-        <li>Seat:<%= tic.seat %> Available for: $<%= tic.price %></li>
-    <% }) %>
+    <li><%= tickets.seat %><%= tickets.price %></li>
 </ul>
 
 <%- include('../partials/footer') %>
