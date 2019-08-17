@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<h4>Tickets already booked:</h4>
+<ul>
+    <% tickets.forEach(function (tic) { %>
+        <li><%= tic.seat %></li>
+    <% }) %>
+</ul>
+
+<form action="/tickets" method="POST">
+    <label>Seat Number:</label>
+    <input name="seat" required pattern="[A-F][1-9]\d?" value="A23">
+    <label>Price:</label>
+    <input type="number" min="0" name="price">
+    <input type="submit" value="Add Tricket">
+</form>
+<%- include('../partials/footer') %>

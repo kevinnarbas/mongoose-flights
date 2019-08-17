@@ -6,21 +6,22 @@
     <li>Departs: <%= flight.departs %></li>
     <li>Departing Airport: <%= flight.airport %></li>
 </ul>
-
-<form action="/flights/<%= flight._id %>/destinations" method="POST">
-    <label>Destination Airport:
-        <select name="airport">
-            <option value="AUS">AUS</option>
-            <option value="DAL">DAL</option>
-            <option value="LAX">LAX</option>
-            <option value="SEA">SEA</option>
-        </select>
-    </label>
-    <label>Arrival Date:
-        <input type="datetime-local" name="arrival">
-    </label>
-    <button>Add Destination</button>
-</form>
+<label><h3>Destinations:</h3>
+    <form action="/flights/<%= flight._id %>/destinations" method="POST">
+        <label>Destination Airport:
+            <select name="airport">
+                <option value="AUS">AUS</option>
+                <option value="DAL">DAL</option>
+                <option value="LAX">LAX</option>
+                <option value="SEA">SEA</option>
+            </select>
+        </label>
+        <label>Arrival Date:
+            <input type="datetime-local" name="arrival">
+        </label>
+        <button>Add Destination</button>
+    </form>
+</label>
 <%if (flight.destinations.length) { %>
 <ul>
     <% flight.destinations.forEach(function(fl) { %>
@@ -30,5 +31,13 @@
 <% } else { %>
     <h3>Flight has no destinations scheduled.</h3>
 <% } %>
+
+<h3>Available Tickets:</h3>
+<a href="/tickets/new">Add Ticket</a>
+<ul>
+    <% tickets.forEach(function(tic) { %>
+        <li>Seat:<%= tic.seat %> Available for: $<%= tic.price %></li>
+    <% }) %>
+</ul>
 
 <%- include('../partials/footer') %>
