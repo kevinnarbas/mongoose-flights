@@ -4,9 +4,9 @@ var ticketsCtrl = require('../controllers/tickets');
 
 
 
-router.get('/tickets/new', ticketsCtrl.new);
-router.post('/tickets', ticketsCtrl.create);
-router.post('/flights/:id/tickets', ticketsCtrl.addTicket);
+// router.get('/tickets/new', ticketsCtrl.new);
+// router.post('flights/:id/tickets', ticketsCtrl.createTicket);
+// router.post('/flights/:id/tickets', ticketsCtrl.addTicket);
 
 
 

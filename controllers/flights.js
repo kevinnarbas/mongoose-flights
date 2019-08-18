@@ -6,6 +6,8 @@ module.exports = {
     new: newFlight,
     create,
     show,
+    addTicket,
+    createTicket,
 }
 
 function index(req, res) {
@@ -35,8 +37,35 @@ function create(req, res) {
 function show(req, res) {
     Flight.findById(req.params.id, function(err, flight) {
         Ticket.find({flight: flight._id}, function(err, tickets) {
+            console.log(tickets)
             res.render('flights/show', {title: 'Flight Details', flight, tickets})
         });
     });
 }
 
+
+
+function addTicket(req, res) { 
+    Flight.findById(req.params.id, function(err, flight) {
+        Ticket.find({}, function(err, tickets) {
+            console.log(tickets);
+            console.log(flight);
+            res.render('tickets/new', {title: 'Add Ticket', tickets, flight});
+        });
+    });
+};
+
+
+function createTicket(req, res) {
+    Flight.findById(req.params.id, function(err, flight) {
+        Ticket.create(req.body, function(err, ticket) {
+            ticket.flight.push(flight._id)
+            ticket.save(function(err) {
+                console.log(flight);
+                console.log(ticket);
+                console.log(req.body);
+                res.redirect(`/flights/${flight._id}`)
+            });
+        });
+    })
+};
