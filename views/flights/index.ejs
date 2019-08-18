@@ -2,21 +2,21 @@
 
 <table>
     <thead>
-        <tr>
-            <th>Airline:</th>
-            <th>Flight Number:</th>
-            <th>Departure Time:</th>
-            <th>Departing Airport:</th>
+        <tr class="full-bar">
+            <th class="table-head">Airline:</th>
+            <th class="table-head">Flight Number:</th>
+            <th class="table-head">Departure Time:</th>
+            <th class="table-head">Departing Airport:</th>
         </tr>
     </thead>
     <tbody>
         <% flights.forEach(function(f) { %>
-        <tr>
+        <tr class="full-bar">
             <td class="table"><%= f.airline %></td>
             <td class="table"><%= f.flightNo %></td>
             <td class="table"><%= f.departs %></td>
             <td class="table"><%= f.airport %></td>
-            <td class=><a href="/flights/<%= f._id %>">DETAILS</a></td>
+            <td class=><a href="/flights/<%= f._id %>" class="details">DETAILS</a></td>
         </tr>
         <% }); %>
     </tbody>

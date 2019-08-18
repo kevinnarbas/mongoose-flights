@@ -5,38 +5,113 @@ html, * {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-rows: 55px 1fr;
+  grid-template-areas: 
+    "nav"
+    'main'
 }
+
+
 
 a {
   color: black;
 }
 
-header {
+body > nav {
+  grid-area: nav;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
   background-color: #3AAFA9;
-  margin: 0;
-  height: 8vh;
-  width: 100%;
 }
-
-nav ul li {
-  list-style: none;
-  display: inline-block;
-  padding: 1.5vh;
-  margin: 1vh;
-  background-color: #2B7A78;
-  border-radius: 9px;
-}
-
 .navbutt {
   text-decoration: none;
   color: #DEF2F1;
+  padding: 1.5vh;
+  background-color: #2B7A78;
+  border-radius: 9px;
+  margin: 0 3px;
+}
+
+.navbutt:hover {
+  background-color: #17252A;
+}
+
+
+main {
+  grid-area: main;
+  justify-self: center;
+  align-items: center;
+}
+
+main > h1 {
+  margin: 12px 0;
+  font-family: 'Racing Sans One', cursive;
+}
+
+.table-head {
+  font-size: 15pt;
+  border-bottom: 1px solid darkgray;
+  padding: 15px 0;
 }
 
 .table {
   text-align: center;
   padding: 13px 0;
+  border-bottom: 1px solid darkgrey;  
+  margin: 0;
+}
+
+.full-bar:hover {
+  background-color: #F5F5F5
+}
+
+.details {
+  background-color: #DEF2F1;
+  padding: 1.5vh;
+  border-radius: 8px;
+  text-decoration: none;
+  border-bottom: 1px solid black;
+}
+
+.details:hover {
+  background-color: #17252A;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.show-title {
+  font-weight: 600;
+  font-size: 14pt;
+}
+
+.show-dest {
+  font-family: 'Baloo Bhaijaan', cursive;
+  font-size: 18pt;
+}
+
+.dest-title {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.add-ticket {
+  background-color: #DEF2F1;
+  padding: 1vh;
+  border-radius: 8px;
+  text-decoration: none;
+  border-bottom: 1px solid black;
+  position: relative;
+  top: 19px;
+}
+
+.add-ticket:hover {
+  background-color: #17252A;
+  color: white;
 }
