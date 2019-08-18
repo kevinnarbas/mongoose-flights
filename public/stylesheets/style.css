@@ -12,7 +12,22 @@ body {
     'main'
 }
 
+.big-button {
+  background-color: #DEF2F1;
+  padding: 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  border-bottom: 1px solid black;
+  position: relative;
+  top: 60px;
+  font-size: 30pt;
+  font-family: 'Baloo Bhaijaan', cursive;
+}
 
+.big-button:hover {
+  background-color: #17252A;
+  color: white;
+}
 
 a {
   color: black;
