@@ -114,7 +114,6 @@ ul {
 
 .dest-title {
   font-weight: bold;
-  text-decoration: underline;
 }
 
 .add-ticket {
@@ -130,4 +129,18 @@ ul {
 .add-ticket:hover {
   background-color: #17252A;
   color: white;
+}
+
+.delete-form button {
+  background-color: #DEF2F1;
+  color: red;
+  border-radius: 5px;
+}
+
+.delete-form button:hover {
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.56);
+}
+
+.dest-button:hover {
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.56);
 }
