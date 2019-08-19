@@ -9,7 +9,8 @@ body {
   grid-template-rows: 55px 1fr;
   grid-template-areas: 
     "nav"
-    'main'
+    "main";
+  background-color: #b8fffa;
 }
 
 .big-button {
@@ -79,7 +80,7 @@ main > h1 {
 }
 
 .full-bar:hover {
-  background-color: #F5F5F5
+  background-color: #4dfff2;
 }
 
 .details {
