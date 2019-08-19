@@ -8,6 +8,7 @@ module.exports = {
     show,
     addTicket,
     createTicket,
+    delete: deleteFlight,
 }
 
 function index(req, res) {
@@ -69,3 +70,14 @@ function createTicket(req, res) {
         });
     })
 };
+
+
+function deleteFlight(req, res) {
+    Flight.findById(req.params.id, function(err, flightId) {
+        Flight.deleteOne({_id: flightId._id}, function(err) {
+            console.log(flightId);
+            console.log(req.params.id)
+            res.redirect('/flights');
+        });
+    });
+}
